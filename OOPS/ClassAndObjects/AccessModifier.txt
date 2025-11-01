@@ -1,0 +1,35 @@
+Access Modifier 
+- Access Modifier defines the scope/visibility of a class (Variables, constructor and methods)
+
+Types of Access modifier :
+1. Public :
+- public is an access modifier in Java that makes classes, methods, or variables accessible from anywhere in the program — both inside and outside the package.
+
+2. Private :
+- private is the most restrictive access modifier in Java.
+When you declare a variable, method, or constructor as private, it can be accessed only within the same class — not from any other class (even in the same package).
+
+🔹 1️⃣ Why outer classes can’t be private
+A top-level class must be accessible by the Java runtime and possibly other classes —
+so if you made it private, no other class (not even the main method) could access it.
+That’s why Java does not allow top-level classes to be private.
+
+3. Protected :
+The protected access modifier in Java allows a variable, method, or constructor to be accessed:
+within the same package, and
+in subclasses (child classes) even if they are in different packages.
+So, protected is like a bridge between default and public —
+it’s more open than default, but not fully open like public.
+
+4. Default :
+If no access modifier (like public, private, or protected) is explicitly specified,
+then Java automatically applies the default access modifier.
+So, “default” is not a keyword — it’s just the absence of any modifier.
+
+
+| **Access Modifier**          | **Within Same Class** | **Within Same Package** | **Subclass (Different Package)** | **Other Packages**     | **Memory Trick / Hint**                           |
+| ---------------------------- | --------------------- | ----------------------- | -------------------------------- | ---------------------- | ------------------------------------------------- |
+| **`private`**                | ✅ Yes                 | ❌ No                    | ❌ No                             | ❌ No                   | 🔒 *“Private room — only you allowed.”*           |
+| **(default)** *(no keyword)* | ✅ Yes                 | ✅ Yes                   | ❌ No                             | ❌ No                   | 🏠 *“Default — only for family (same package).”*  |
+| **`protected`**              | ✅ Yes                 | ✅ Yes                   | ✅ Yes                            | ❌ No (except subclass) | 🧬 *“Protected — shared with kids (subclasses).”* |
+| **`public`**                 | ✅ Yes                 | ✅ Yes                   | ✅ Yes                            | ✅ Yes                  | 🌍 *“Public — open to everyone.”*                 |
